@@ -47,3 +47,26 @@ func TestRearrangeArrayUsingTwoArrays(t *testing.T) {
 		}
 	}
 }
+
+// Sort 0's ,1's and 2's using Dutch National Flag
+func TestSort012UsingDNF(t *testing.T) {
+	tests := []struct {
+		input []int
+		want  []int
+	}{
+		{input: []int{1, 2, 0, 1, 2}, want: []int{0, 1, 1, 2, 2}},
+		{input: []int{0, 1, 2, 0, 1, 2}, want: []int{0, 0, 1, 1, 2, 2}},
+		{input: []int{0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}, want: []int{0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2}},
+		{input: []int{}, want: []int{}},
+	}
+
+	for _, tc := range tests {
+		arr := make([]int, len(tc.input))
+		copy(arr, tc.input)
+		sort_0_1_2_using_dnf(arr)
+		if !reflect.DeepEqual(arr, tc.want) {
+			t.Errorf("sort_0_1_2_using_dnf(%v) = %v; want %v", tc.input, arr, tc.want)
+		}
+	}
+}
+
