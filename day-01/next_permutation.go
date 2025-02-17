@@ -88,3 +88,46 @@ func swap(arr []int, i int, j int) {
 	arr[i] = arr[j]
 	arr[j] = temp
 }
+
+// Approach 2 : Using Pivot value
+
+// Original Array : {2, 4, 1, 7, 5, 0}
+
+// Find the number where present value is greater than next value and store as pivot
+// if not found , initialize as -1
+
+// if pivot is -1 , then reverse the array ( This will give us the first permutation. Example : arr ={3,2,1} and Output will be {1,2,3} )
+
+// find the number greater the pivot and swap the present number <-> pivot
+// reverse the array from pivot and end of the array
+
+// Result Array : {2, 4, 5, 0, 1, 7}
+
+func nextPermutation(arr []int) {
+	pivot := -1
+	for i := len(arr) - 2; i >= 0; i-- {
+		if arr[i] < arr[i+1] {
+			pivot = i
+			break
+		}
+	}
+	if pivot == -1 {
+		reverse(arr, 0, len(arr)-1)
+		return
+	}
+	for i := len(arr) - 1; i > pivot; i-- {
+		if arr[i] > arr[pivot] {
+			swap(arr, i, pivot)
+			break
+		}
+	}
+	reverse(arr, pivot+1, len(arr)-1)
+}
+
+func reverse(arr []int, start int, end int) {
+	for start < end {
+		swap(arr, start, end)
+		start++
+		end--
+	}
+}
