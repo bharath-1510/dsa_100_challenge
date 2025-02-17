@@ -93,3 +93,25 @@ func TestNextPermution(t *testing.T) {
 		}
 	}
 }
+
+// find the Next Permutation of the array
+func TestNextPermution(t *testing.T) {
+	tests := []struct {
+		input []int
+		want  []int
+	}{
+		{input: []int{2, 4, 1, 7, 5, 0}, want: []int{2, 4, 5, 0, 1, 7}},
+		{input: []int{3, 2, 1}, want: []int{1, 2, 3}},
+		{input: []int{1, 3, 5, 4, 2}, want: []int{1, 4, 2, 3, 5}},
+		{input: []int{}, want: []int{}},
+	}
+
+	for _, tc := range tests {
+		arr := make([]int, len(tc.input))
+		copy(arr, tc.input)
+		nextPermutation(arr)
+		if !reflect.DeepEqual(arr, tc.want) {
+			t.Errorf("nextPermutation(%v) = %v; want %v", tc.input, arr, tc.want)
+		}
+	}
+}
