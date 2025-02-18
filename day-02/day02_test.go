@@ -26,6 +26,17 @@ func TestStockBuySell(t *testing.T) {
 	}
 }
 
+// Helper function to compare two slices for equality
+func equalSlices(a, b []int) bool {
+
+	for i := range a {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
 func TestFindFirstandLastOccurence(t *testing.T) {
 	tests := []struct {
 		input    []int
