@@ -239,3 +239,46 @@ func TestIntersectTwoArrayWithoutDuplicatesMerge(t *testing.T) {
 		})
 	}
 }
+
+func TestIsArraySorted(t *testing.T) {
+	tests := []struct {
+		name     string
+		array    []int
+		expected bool
+	}{
+		{
+			name:     "Sorted array",
+			array:    []int{1, 2, 3, 4, 5},
+			expected: true,
+		},
+		{
+			name:     "Unsorted array",
+			array:    []int{5, 3, 1, 2, 4},
+			expected: false,
+		},
+		{
+			name:     "Empty array",
+			array:    []int{},
+			expected: true,
+		},
+		{
+			name:     "Single element array",
+			array:    []int{1},
+			expected: true,
+		},
+		{
+			name:     "Array with duplicates",
+			array:    []int{1, 2, 2, 3, 4},
+			expected: true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := IsArraySorted(tt.array)
+			if result != tt.expected {
+				t.Errorf("expected %v, got %v", tt.expected, result)
+			}
+		})
+	}
+}
