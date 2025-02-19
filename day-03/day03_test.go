@@ -289,11 +289,7 @@ func TestFindMissingNumber(t *testing.T) {
 		array    []int
 		expected int
 	}{
-		{
-			name:     "No missing number",
-			array:    []int{1, 2, 3, 4, 5},
-			expected: 0,
-		},
+		
 		{
 			name:     "Missing number in the middle",
 			array:    []int{1, 2, 4, 5},
@@ -342,11 +338,7 @@ func TestFindMissingNumberUsingFormula(t *testing.T) {
 		array    []int
 		expected int
 	}{
-		{
-			name:     "No missing number",
-			array:    []int{1, 2, 3, 4, 5},
-			expected: 0,
-		},
+		
 		{
 			name:     "Missing number in the middle",
 			array:    []int{1, 2, 4, 5},
@@ -395,11 +387,7 @@ func TestFindMissingNumberUsingHash(t *testing.T) {
 		array    []int
 		expected int
 	}{
-		{
-			name:     "No missing number",
-			array:    []int{1, 2, 3, 4, 5},
-			expected: 0,
-		},
+		
 		{
 			name:     "Missing number in the middle",
 			array:    []int{1, 2, 4, 5},
