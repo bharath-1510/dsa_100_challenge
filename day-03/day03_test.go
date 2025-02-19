@@ -282,3 +282,163 @@ func TestIsArraySorted(t *testing.T) {
 		})
 	}
 }
+
+func TestFindMissingNumber(t *testing.T) {
+	tests := []struct {
+		name     string
+		array    []int
+		expected int
+	}{
+		{
+			name:     "No missing number",
+			array:    []int{1, 2, 3, 4, 5},
+			expected: 0,
+		},
+		{
+			name:     "Missing number in the middle",
+			array:    []int{1, 2, 4, 5},
+			expected: 3,
+		},
+		{
+			name:     "Missing number at the start",
+			array:    []int{2, 3, 4, 5},
+			expected: 1,
+		},
+		{
+			name:     "Missing number at the end",
+			array:    []int{1, 2, 3, 4},
+			expected: 5,
+		},
+		{
+			name:     "Empty array",
+			array:    []int{},
+			expected: 1,
+		},
+		{
+			name:     "Single element array",
+			array:    []int{2},
+			expected: 1,
+		},
+		{
+			name:     "Array with duplicates",
+			array:    []int{1, 2, 2, 4, 5},
+			expected: 3,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := FindMissingNumber(tt.array)
+			if result != tt.expected {
+				t.Errorf("expected %v, got %v", tt.expected, result)
+			}
+		})
+	}
+}
+
+func TestFindMissingNumberUsingFormula(t *testing.T) {
+	tests := []struct {
+		name     string
+		array    []int
+		expected int
+	}{
+		{
+			name:     "No missing number",
+			array:    []int{1, 2, 3, 4, 5},
+			expected: 0,
+		},
+		{
+			name:     "Missing number in the middle",
+			array:    []int{1, 2, 4, 5},
+			expected: 3,
+		},
+		{
+			name:     "Missing number at the start",
+			array:    []int{2, 3, 4, 5},
+			expected: 1,
+		},
+		{
+			name:     "Missing number at the end",
+			array:    []int{1, 2, 3, 4},
+			expected: 5,
+		},
+		{
+			name:     "Empty array",
+			array:    []int{},
+			expected: 1,
+		},
+		{
+			name:     "Single element array",
+			array:    []int{2},
+			expected: 1,
+		},
+		{
+			name:     "Array with duplicates",
+			array:    []int{1, 2, 2, 4, 5},
+			expected: 3,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := FindMissingNumberUsingFormula(tt.array)
+			if result != tt.expected {
+				t.Errorf("expected %v, got %v", tt.expected, result)
+			}
+		})
+	}
+}
+
+func TestFindMissingNumberUsingHash(t *testing.T) {
+	tests := []struct {
+		name     string
+		array    []int
+		expected int
+	}{
+		{
+			name:     "No missing number",
+			array:    []int{1, 2, 3, 4, 5},
+			expected: 0,
+		},
+		{
+			name:     "Missing number in the middle",
+			array:    []int{1, 2, 4, 5},
+			expected: 3,
+		},
+		{
+			name:     "Missing number at the start",
+			array:    []int{2, 3, 4, 5},
+			expected: 1,
+		},
+		{
+			name:     "Missing number at the end",
+			array:    []int{1, 2, 3, 4},
+			expected: 5,
+		},
+		{
+			name:     "Empty array",
+			array:    []int{},
+			expected: 1,
+		},
+		{
+			name:     "Single element array",
+			array:    []int{2},
+			expected: 1,
+		},
+		{
+			name:     "Array with duplicates",
+			array:    []int{1, 2, 2, 4, 5},
+			expected: 3,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := FindMissingNumberUsingHash(tt.array)
+			if result != tt.expected {
+				t.Errorf("expected %v, got %v", tt.expected, result)
+			}
+		})
+	}
+
+}
