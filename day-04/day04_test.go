@@ -68,7 +68,6 @@ func TestFindMaximumAndMinimum(t *testing.T) {
 	for _, tc := range tests {
 
 		min, max := FindMaximumAndMinimum(tc.input)
-		fmt.Println(min, max)
 		if min != tc.min || max != tc.max {
 			t.Errorf("FindMaximumAndMinimum(%v) = (%d, %d); want (%d, %d)", tc.input, min, max, tc.min, tc.max)
 		}
