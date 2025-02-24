@@ -83,40 +83,17 @@ func TestFindFirstandLastOccurenceUsingBinarySearch(t *testing.T) {
 
 }
 
-func TestMoveZeroEnd(t *testing.T) {
-	tests := []struct {
-		input    []int
-		expected []int
+func TestFindCelebrityUsingBruteForce(t *testing.T){
+	tests := [] struct{
+		input [][]int
+		expected int
 	}{
-		{[]int{0, 1, 0, 3, 12}, []int{1, 3, 12, 0, 0}},
-		{[]int{0, 0, 1}, []int{1, 0, 0}},
-		{[]int{1, 2, 3}, []int{1, 2, 3}},
-		{[]int{0, 0, 0}, []int{0, 0, 0}},
-		{[]int{1, 0, 2, 0, 3}, []int{1, 2, 3, 0, 0}},
+		{input: [][]int{{0, 1, 0}, {0, 0, 0}, {0, 1, 0}}, expected: 1},
+		{input: [][]int{{ 1, 0}, {0, 1}}, expected: -1},
+		{input: [][]int{{}}, expected: 0},
 	}
-
 	for _, test := range tests {
-		result := MoveZeroEnd(test.input)
-		if !reflect.DeepEqual(result, test.expected) {
-			t.Errorf("For input %v, expected %v, but got %v", test.input, test.expected, result)
-		}
-	}
-}
-
-func TestMoveZeroEndUsingSwap(t *testing.T) {
-	tests := []struct {
-		input    []int
-		expected []int
-	}{
-		{[]int{0, 1, 0, 3, 12}, []int{1, 3, 12, 0, 0}},
-		{[]int{0, 0, 1}, []int{1, 0, 0}},
-		{[]int{1, 2, 3}, []int{1, 2, 3}},
-		{[]int{0, 0, 0}, []int{0, 0, 0}},
-		{[]int{1, 0, 2, 0, 3}, []int{1, 2, 3, 0, 0}},
-	}
-
-	for _, test := range tests {
-		result := MoveZeroEndUsingSwap(test.input)
+		result := FindCelebrityUsingBruteForce(test.input)
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("For input %v, expected %v, but got %v", test.input, test.expected, result)
 		}
