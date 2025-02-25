@@ -1,3 +1,5 @@
+package day01
+
 // Approach 1 :  Using Two Arrays
 
 // Original array : {1, 2, -3, 4, -5}

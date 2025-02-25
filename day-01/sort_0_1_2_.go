@@ -1,3 +1,5 @@
+package day01
+
 // Approach : Using Dutch National Flag
 
 // Original Array : {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}

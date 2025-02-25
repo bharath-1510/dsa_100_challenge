@@ -1,3 +1,6 @@
+package day02
+
+// Bruteforce Approach
 func FindCelebrityUsingBruteForce(matrix [][]int) int {
 	n := len(matrix)
 	for i := 0; i < n; i++ {
@@ -14,3 +17,4 @@ func FindCelebrityUsingBruteForce(matrix [][]int) int {
 	}
 	return -1
 }
+

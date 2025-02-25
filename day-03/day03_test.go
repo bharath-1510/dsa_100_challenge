@@ -74,7 +74,7 @@ func TestIntersectTwoArrayUsingMap(t *testing.T) {
 			name:     "Some intersection",
 			array1:   []int{1, 2, 3, 4},
 			array2:   []int{3, 4, 5, 6},
-			expected: []int{3, 4},
+			expected: []int{3,4},
 		},
 		{
 			name:     "Full intersection",

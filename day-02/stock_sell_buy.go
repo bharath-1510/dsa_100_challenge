@@ -1,3 +1,5 @@
+package day02
+
 // Approach : Using Two Pointer
 func stockSellBuy(arr []int) int {
 	max := 0

@@ -1,3 +1,5 @@
+package day03
+
 func IsArraySorted(arr []int) bool {
 	i := 0
 	for i < len(arr)-1 {

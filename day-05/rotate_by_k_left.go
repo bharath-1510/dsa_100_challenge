@@ -1,3 +1,5 @@
+package day05
+
 // Bruteforce Approach
 func RotateByKInLeft(arr []int, k int) []int {
 	k = k % len(arr)

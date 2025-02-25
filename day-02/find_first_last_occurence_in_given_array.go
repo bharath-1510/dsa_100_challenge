@@ -1,3 +1,5 @@
+package day02
+
 // Approach : Using Two Pointer
 func FindFirstandLastOccurence(arr []int, target int) (int, int) {
 	first := -1

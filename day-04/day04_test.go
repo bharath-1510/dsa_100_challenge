@@ -2,7 +2,6 @@
 package day04
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )

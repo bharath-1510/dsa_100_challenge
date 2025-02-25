@@ -1,3 +1,7 @@
+package day01
+import (
+	"sort"
+)
 // Approach 1 : By Generating all permutations
 
 // Original Array : {2, 4, 1, 7, 5, 0}

@@ -3,8 +3,6 @@ package day01
 import (
 	"reflect"
 	"testing"
-	"sort"
-	"fmt"
 )
 // Rearrange the Postive and Negative Number using insertion sort
 func TestRearrangeArrayUsingInsertionSort(t *testing.T) {
@@ -73,7 +71,7 @@ func TestSort012UsingDNF(t *testing.T) {
 }
 
 // find the Next Permutation of the array by generating all permutations
-func TestNextPermution(t *testing.T) {
+func TestNextPermutionAll(t *testing.T) {
 	tests := []struct {
 		input []int
 		want  []int

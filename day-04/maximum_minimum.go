@@ -1,3 +1,7 @@
+package day04
+
+import "math"
+
 func FindMaximumAndMinimum(arr []int) (int, int) {
 	max := math.MinInt
 	min := math.MaxInt

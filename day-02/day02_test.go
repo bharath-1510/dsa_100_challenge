@@ -3,8 +3,8 @@ package day02
 import (
 	"reflect"
 	"testing"
-	"fmt"
 )
+
 // Stock Buy and Sell Problem
 func TestStockBuySell(t *testing.T) {
 	tests := []struct {

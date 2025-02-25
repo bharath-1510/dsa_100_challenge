@@ -1,3 +1,8 @@
+package day04
+
+import (
+	"math"
+)
 func FindSecondSmallestAndSecondLargest(arr []int) (int, int) {
 	if len(arr) == 1 {
 		return arr[0], arr[0]

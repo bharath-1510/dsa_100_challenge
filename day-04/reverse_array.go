@@ -1,3 +1,5 @@
+package day04
+
 // Approach 1 : Using Auxillary Array
 func reverseArray_using_aux_array(arr []int) {
 	res := make([]int, len(arr))

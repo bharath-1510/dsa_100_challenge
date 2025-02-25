@@ -1,3 +1,5 @@
+package day03
+
 // Bruteforce Approach
 func IntersectTwoArrayWithoutDuplicatesMerge(arr1 []int, arr2 []int) []int {
 	var res []int
@@ -52,7 +54,7 @@ func IntersectTwoArray(arr1 []int, arr2 []int) []int {
 	}
 
 	for _, val := range arr2 {
-		if flag[val] == true {
+		if flag[val] {
 			res = append(res, val)
 			flag[val] = false
 		}

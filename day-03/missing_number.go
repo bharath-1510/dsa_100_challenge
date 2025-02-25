@@ -1,3 +1,5 @@
+package day03
+
 // Brute force
 func FindMissingNumber(arr []int) int {
 

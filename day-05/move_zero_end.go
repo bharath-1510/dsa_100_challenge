@@ -1,3 +1,4 @@
+package day05
 // Bruteforce Approach
 func MoveZeroEnd(arr []int) []int {
 	pos := 0
