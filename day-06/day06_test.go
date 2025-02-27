@@ -47,9 +47,9 @@ func TestFindElementsNByKTimesHash(t *testing.T) {
 		k int
 		expected []int
 	}{
-		{[]int{2, 2, 3, 1, 3, 2, 1, 1},3, []int{1, 2}},
-		{[]int{-5, 3, -5, 3},2, []int{-5,3}},
-		{[]int{3, 2, 2, 4, 1, 4,4,4},2, []int{4}},
+		{[]int{2, 2, 3, 1, 3, 2, 1, 1},4, []int{1, 2}},
+		{[]int{-5, 3, -5, 3},3, []int{-5,3}},
+		{[]int{3, 2, 2, 4, 1, 4,4,4},3, []int{4}},
 	}
 
 	for _, test := range tests {
@@ -65,7 +65,7 @@ func TestMostFrequentElementArrayBruteForce(t *testing.T) {
 		input    []int
 		expected int
 	}{
-		{[]int{2, 2, 3, 1, 3, 2, 1, 1},1},
+		{[]int{2, 2, 3, 1, 3, 2, 1,1, 1},1},
 		{[]int{-5, 3, -1, 3,1},3},
 		{[]int{3, 2, 2, 4, 1, 4, 4, 4},4},
 	}
@@ -83,7 +83,7 @@ func TestMostFrequentElementArray(t *testing.T) {
 		input    []int
 		expected int
 	}{
-		{[]int{2, 2, 3, 1, 3, 2, 1, 1},1},
+		{[]int{2, 2, 3, 1, 3, 2, 1,1, 1},1},
 		{[]int{-5, 3, -1, 3,1},3},
 		{[]int{3, 2, 2, 4, 1, 4, 4, 4},4},
 	}
@@ -101,7 +101,7 @@ func TestMostFrequentElementArrayUsingSorting(t *testing.T) {
 		input    []int
 		expected int
 	}{
-		{[]int{2, 2, 3, 1, 3, 2, 1, 1},1},
+		{[]int{2, 2, 3, 1, 3, 2, 1, 1,1},1},
 		{[]int{-5, 3, -1, 3,1},3},
 		{[]int{3, 2, 2, 4, 1, 4, 4, 4},4},
 	}
