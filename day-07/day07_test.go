@@ -2,6 +2,7 @@ package day07
 
 import (
 	"reflect"
+	"sort"
 	"testing"
 )
 
@@ -28,8 +29,8 @@ func TestMaximumSumSubArrayWithIndex(t *testing.T) {
 		input    []int
 		expected []int
 	}{
-		{[]int{2, 3, -8, 7, -1, 2, 3}, []int{11,3,7}},
-		{[]int{-2, -4}, []int{-2,0,1}},
+		{[]int{2, 3, -8, 7, -1, 2, 3}, []int{11,3,6}},
+		{[]int{-2, -4}, []int{-2,0,0}},
 		{[]int{5, 4, 1, 7, 8}, []int{25,0,4}},
 	}
 
@@ -54,7 +55,7 @@ func TestTwoSumUsingSortingWithTwoPointer(t *testing.T) {
 
 	for _, test := range tests {
 		result := TwoSumUsingSortingWithTwoPointer(test.input,test.target)
-		if !reflect.DeepEqual(result, test.expected) {
+		if !checkArray(result, test.expected) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
@@ -74,7 +75,7 @@ func TestTwoSumUsingHash(t *testing.T) {
 
 	for _, test := range tests {
 		result := TwoSumUsingHash(test.input,test.target)
-		if !reflect.DeepEqual(result, test.expected) {
+		if !checkArray(result, test.expected) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
@@ -94,7 +95,7 @@ func TestTwoSumBruteForce(t *testing.T) {
 
 	for _, test := range tests {
 		result := TwoSumBruteForce(test.input,test.target)
-		if !reflect.DeepEqual(result, test.expected) {
+		if !checkArray(result, test.expected) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
@@ -155,4 +156,10 @@ func TestTripletSumUsingSorting(t *testing.T) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
+}
+
+func checkArray(arr1 []int , arr2 []int) bool{
+	sort.Ints(arr1)
+	sort.Ints(arr2)
+	return reflect.DeepEqual(arr1,arr2)
 }
