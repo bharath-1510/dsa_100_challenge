@@ -107,14 +107,14 @@ func TestTripletSumBruteForce(t *testing.T) {
 		target int
 		expected [][]int
 	}{
-		{[]int{0, -1, 2, -3, 1,2,3},-2, [][]int{{0,-3,1},{-1,2,-3}}},
+		{[]int{0, -1, 2, -3, 1,3},-2, [][]int{{0,-3,1},{-1,2,-3}}},
 		{[]int{-2,0,1,4,5},4, [][]int{{-2,1,5}}},
 		{[]int{5, 4, 1, 7, -8},0, [][]int{{1,7,-8}}},
 	}
 
 	for _, test := range tests {
 		result := TripletSumBruteForce(test.input,test.target)
-		if !reflect.DeepEqual(result, test.expected) {
+		if !checkArrayTriplet(result, test.expected) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
@@ -126,14 +126,14 @@ func TestTripletSumUsingHashing(t *testing.T) {
 		target int
 		expected [][]int
 	}{
-		{[]int{0, -1, 2, -3, 1,2,3},-2, [][]int{{0,-3,1},{-1,2,-3}}},
+		{[]int{0, -1, 2, -3, 1,3},-2, [][]int{{0,-3,1},{-1,2,-3}}},
 		{[]int{-2,0,1,4,5},4, [][]int{{-2,1,5}}},
 		{[]int{5, 4, 1, 7, -8},0, [][]int{{1,7,-8}}},
 	}
 
 	for _, test := range tests {
 		result := TripletSumUsingHashing(test.input,test.target)
-		if !reflect.DeepEqual(result, test.expected) {
+		if !checkArrayTriplet(result, test.expected) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
@@ -145,14 +145,14 @@ func TestTripletSumUsingSorting(t *testing.T) {
 		target int
 		expected [][]int
 	}{
-		{[]int{0, -1, 2, -3, 1,2,3},-2, [][]int{{0,-3,1},{-1,2,-3}}},
+		{[]int{0, -1, 2, -3, 1,3},-2, [][]int{{0,-3,1},{-1,2,-3}}},
 		{[]int{-2,0,1,4,5},4, [][]int{{-2,1,5}}},
 		{[]int{5, 4, 1, 7, -8},0, [][]int{{1,7,-8}}},
 	}
 
 	for _, test := range tests {
 		result := TripletSumUsingSorting(test.input,test.target)
-		if !reflect.DeepEqual(result, test.expected) {
+		if !checkArrayTriplet(result, test.expected) {
 			t.Errorf("For input %v & target %v, expected %v, but got %v", test.input,test.target, test.expected, result)
 		}
 	}
@@ -161,5 +161,33 @@ func TestTripletSumUsingSorting(t *testing.T) {
 func checkArray(arr1 []int , arr2 []int) bool{
 	sort.Ints(arr1)
 	sort.Ints(arr2)
+	return reflect.DeepEqual(arr1,arr2)
+}
+
+func checkArrayTriplet(arr1 [][]int , arr2 [][]int) bool{
+
+	for i,_ := range arr1 {
+		sort.Ints(arr1[i])
+	}
+	for i,_ := range arr2 {
+		sort.Ints(arr2[i])
+	}
+
+	compare := func(a, b []int) bool {
+		for i := range a {
+			if a[i] != b[i] {
+				return a[i] < b[i]
+			}
+		}
+		return false
+	}
+
+	sort.Slice(arr1, func(i, j int) bool {
+		return compare(arr1[i], arr1[j])
+	})
+
+	sort.Slice(arr2, func(i, j int) bool {
+		return compare(arr2[i], arr2[j])
+	})
 	return reflect.DeepEqual(arr1,arr2)
 }
